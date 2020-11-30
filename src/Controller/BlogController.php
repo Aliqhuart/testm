@@ -62,7 +62,7 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/search", methods={"POST"}, name="blog_search")
+     * @Route("/search", methods={"GET"}, name="blog_search")
      */
     public function search(Request $request, PostRepository $posts): Response
     {
