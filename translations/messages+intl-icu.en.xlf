@@ -80,6 +80,10 @@
                 <source>title.post_list</source>
                 <target>Post List</target>
             </trans-unit>
+            <trans-unit id="title.category_list">
+                <source>title.category_list</source>
+                <target>Liste des catégories</target>
+            </trans-unit>
             <trans-unit id="title.edit_post">
                 <source>title.edit_post</source>
                 <target>Edit post #{id, number}</target>
@@ -153,6 +157,16 @@
                 <source>label.create_post</source>
                 <target>Create post</target>
             </trans-unit>
+
+            <trans-unit id="action.create_category">
+                <source>action.create_category</source>
+                <target>Create a new category</target>
+            </trans-unit>
+            <trans-unit id="label.create_category">
+                <source>label.create_category</source>
+                <target>Create category</target>
+            </trans-unit>
+
             <trans-unit id="label.save_and_create_new">
                 <source>label.save_and_create_new</source>
                 <target>Save and create new</target>
@@ -271,6 +285,10 @@
                 <source>menu.post_list</source>
                 <target>Post list</target>
             </trans-unit>
+            <trans-unit id="menu.category_list">
+                <source>menu.category_list</source>
+                <target>Liste des catégories</target>
+            </trans-unit>
             <trans-unit id="menu.back_to_blog">
                 <source>menu.back_to_blog</source>
                 <target>Back to blog</target>
@@ -338,6 +356,31 @@
             </trans-unit>
             <trans-unit id="post.search_no_results">
                 <source>post.search_no_results</source>
+                <target>No results found</target>
+            </trans-unit>
+
+            <trans-unit id="category.no_posts_found">
+                <source>category.no_posts_found</source>
+                <target>No categories found.</target>
+            </trans-unit>
+            <trans-unit id="category.created_successfully">
+                <source>category.created_successfully</source>
+                <target>Category created successfully!</target>
+            </trans-unit>
+            <trans-unit id="category.updated_successfully">
+                <source>category.updated_successfully</source>
+                <target>Category updated successfully!</target>
+            </trans-unit>
+            <trans-unit id="category.deleted_successfully">
+                <source>category.deleted_successfully</source>
+                <target>Category deleted successfully!</target>
+            </trans-unit>
+            <trans-unit id="category.search_for">
+                <source>category.search_for</source>
+                <target>Search for...</target>
+            </trans-unit>
+            <trans-unit id="category.search_no_results">
+                <source>category.search_no_results</source>
                 <target>No results found</target>
             </trans-unit>
 
