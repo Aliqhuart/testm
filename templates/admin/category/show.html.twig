@@ -1,0 +1,29 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'admin_category_show' %}
+
+{% block main %}
+    <h1>{{ category.title }}</h1>
+
+    <p class="category-metadata">
+        <span class="metadata"><i class="fa fa-calendar"></i> {{ category.publishedAt|localizeddate('long', 'medium', null, 'UTC') }}</span>
+        <span class="metadata"><i class="fa fa-user"></i> {{ category.author.fullName }}</span>
+    </p>
+
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('admin_category_edit', {id: category.id}) }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit_category'|trans }}
+        </a>
+    </div>
+
+    <div class="section">
+        {{ include('admin/category/_delete_form.html.twig', {category: category}, with_context = false) }}
+    </div>
+
+    {{ parent() }}
+
+    
+{% endblock %}

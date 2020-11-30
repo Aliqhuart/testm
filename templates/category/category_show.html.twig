@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'blog_category_show' %}
+
+{% block main %}
+    <h1>{{ category.title }}</h1>
+
+    <p class="category-metadata">
+        <span class="metadata"><i class="fa fa-calendar"></i> {{ category.publishedAt|localizeddate('long', 'medium', null, 'UTC') }}</span>
+        <span class="metadata"><i class="fa fa-user"></i> {{ category.author.fullName }}</span>
+    </p>
+
+{% block sidebar %}
+    {% if is_granted('edit', category) %}
+        <div class="section">
+            <a class="btn btn-lg btn-block btn-success" href="{{ path('admin_category_edit', {id: category.id}) }}">
+                <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit_category'|trans }}
+            </a>
+        </div>
+    {% endif %}
+
+    {# the parent() function includes the contents defined by the parent template
+      ('base.html.twig') for this block ('sidebar'). This is a very convenient way
+      to share common contents in different templates #}
+    {{ parent() }}
+
+    
+    {{ include('blog/_rss.html.twig') }}
+{% endblock %}

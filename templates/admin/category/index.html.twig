@@ -1,9 +1,9 @@
 {% extends 'admin/layout.html.twig' %}
 
-{% block body_id 'admin_post_index' %}
+{% block body_id 'admin_category_index' %}
 
 {% block main %}
-    <h1>{{ 'title.post_list'|trans }}</h1>
+    <h1>{{ 'title.category_list'|trans }}</h1>
 
     <table class="table table-striped table-middle-aligned">
         <thead>
@@ -14,20 +14,20 @@
             </tr>
         </thead>
         <tbody>
-        {% for post in posts %}
+        {% for category in categories %}
             <tr>
-                <td>{{ post.title }}</td>
+                <td>{{ category.title }}</td>
                 {# it's not mandatory to set the timezone in localizeddate(). This is done to
                    avoid errors when the 'intl' PHP extension is not available and the application
                    is forced to use the limited "intl polyfill", which only supports UTC and GMT #}
-                <td>{{ post.publishedAt|localizeddate('medium', 'short', null, 'UTC') }}</td>
+                <td>{{ category.publishedAt|localizeddate('medium', 'short', null, 'UTC') }}</td>
                 <td class="text-right">
                     <div class="item-actions">
-                        <a href="{{ path('admin_post_edit', {id: post.id}) }}" class="btn btn-sm btn-default">
+                        <a href="{{ path('admin_category_edit', {id: category.id}) }}" class="btn btn-sm btn-default">
                             <i class="fa fa-eye" aria-hidden="true"></i> {{ 'action.show'|trans }}
                         </a>
 
-                        <a href="{{ path('admin_post_edit', {id: post.id}) }}" class="btn btn-sm btn-primary">
+                        <a href="{{ path('admin_category_edit', {id: category.id}) }}" class="btn btn-sm btn-primary">
                             <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit'|trans }}
                         </a>
                     </div>
@@ -35,7 +35,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="4" align="center">{{ 'post.no_posts_found'|trans }}</td>
+                <td colspan="4" align="center">{{ 'category.no_categories_found'|trans }}</td>
            </tr>
         {% endfor %}
         </tbody>
@@ -44,8 +44,8 @@
 
 {% block sidebar %}
     <div class="section actions">
-        <a href="{{ path('admin_post_new') }}" class="btn btn-lg btn-block btn-success">
-            <i class="fa fa-plus" aria-hidden="true"></i> {{ 'action.create_post'|trans }}
+        <a href="{{ path('admin_category_new') }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-plus" aria-hidden="true"></i> {{ 'action.create_category'|trans }}
         </a>
     </div>
 
