@@ -118,6 +118,13 @@ class AppFixtures extends Fixture
         ];
     }
 
+    /**
+     * Cette fonction récupère toutes les données nécessaires du formulaire 
+     * et les renvoie sous la forme d'un tableau de «publications» 
+     * contenant toutes les données nécessaires pour une publication spécifique. 
+     * Ce tableau est ensuite utilisé par la classe AppFixtures (ligne: 69-71) 
+     * pour stocker les données de chaque publication du tableau dans la base de données
+     */
     private function getPostData()
     {
         $posts = [];
